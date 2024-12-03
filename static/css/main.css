@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+#video-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+}
+
+#video {
+    width: 100%;
+    height: auto;
+}
+
+
+#overlay-text-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    z-index: 10;
+    overflow: hidden;
+    /* background-color: white; */
+    display: flex;          /* 使用 flexbox */
+    align-items: center; 
+}
+
+#overlay-text-2 {
+    position: absolute;
+    top: 7%;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    z-index: 10;
+    overflow: hidden;
+    /* background-color: lightblue; */
+    display: flex;          /* 使用 flexbox */
+    align-items: center; 
+}
+
+#overlay-text-3 {
+    position: absolute;
+    top: 14%;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    z-index: 10;
+    overflow: hidden;
+    /* background-color: lightgreen; */
+    display: flex;          /* 使用 flexbox */
+    align-items: center; 
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* transform: translateX(-100vw); */
+        transform: translateX(var(--move-distance));
+    }
+}
+
+.comment {
+    position: absolute;
+    left: 100%;/* 確保從最右側開始 */
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: slideLeft 15s linear;
+    margin: 0;        /* 移除預設邊距 */
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; 
+}
+
+/* 自定義全螢幕按鈕樣式 */
+.custom-fullscreen-btn {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>') no-repeat center;
+    margin-left: 10px;
+}
